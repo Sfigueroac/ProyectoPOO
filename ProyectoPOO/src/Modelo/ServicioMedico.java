@@ -13,9 +13,9 @@ import java.time.LocalDate;
  */
 public class ServicioMedico {
     private String tipo;
-    private LocalDate fecha;
-
-    public ServicioMedico(String tipo, LocalDate fecha) {
+    private String fecha;
+    private double costo;
+    public ServicioMedico(String tipo, String fecha) {
         this.tipo = tipo;
         this.fecha = fecha;
     }
@@ -28,24 +28,38 @@ public class ServicioMedico {
         this.tipo = tipo;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public double getCosto() {
+        return costo;
+    }
+
+    public void setCosto(double costo) {
+        this.costo = costo;
     }
 
     @Override
     public String toString() {
-        return "ServicioMedico{" + "tipo=" + tipo + ", fecha=" + fecha + '}';
+        return "ServicioMedico{" + "tipo=" + tipo + ", fecha=" + fecha + ", costo=" + costo + '}';
+    }
+
+    public ServicioMedico(String tipo, String fecha, double costo) {
+        this.tipo = tipo;
+        this.fecha = fecha;
+        this.costo = costo;
     }
     
     
-    public double calcularCosto(){
-        return 1+1;
-    }
+
+    
     
     }
+    
     
 

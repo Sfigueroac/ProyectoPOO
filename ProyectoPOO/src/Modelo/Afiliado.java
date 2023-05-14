@@ -10,20 +10,15 @@ package Modelo;
  * @author Home
  */
 public class Afiliado {
-    private int identificacion;
-    private String nombre;
-    private int celular;
-    private double salario;
-    private ServicioMedico suServicioMedico;
+    protected int identificacion;
+    protected String nombre;
+    protected int celular;
+    protected ServicioMedico suServicioMedico;
 
-    public Afiliado(int identificacion, String nombre, int celular, double salario) {
+    public Afiliado(String nombre, int identificacion, int celular, ServicioMedico suServicioMedico) {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.celular = celular;
-        this.salario = salario;
-    }
-
-    public Afiliado(ServicioMedico suServicioMedico) {
         this.suServicioMedico = suServicioMedico;
     }
 
@@ -58,42 +53,48 @@ public class Afiliado {
     public void setCelular(int celular) {
         this.celular = celular; 
     }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(int salario) {
-        this.salario = salario;
-    }
+    
 
     @Override
     public String toString() {
-        return "Afiliado{" + "identificacion=" + identificacion + ", nombre=" + nombre + ", celular=" + celular + ", salario=" + salario + '}';
-    }
+        return "Afiliado{" + "identificacion=" + identificacion + ", nombre=" + nombre + ", celular=" + celular + ", Servicio Medico" + suServicioMedico;
+   }
+}
 
     
+  
+///    public double CalcularCuota(){
+//        double cuotaModeradora = 0.0;
+//             if (salario == 1) {
+//            cuotaModeradora = 4100;
+//        } else if (salario == 2) {
+//            cuotaModeradora = 16400;
+//        } else if (salario == 3) {
+//            cuotaModeradora = 43000;
+ //      }
+//    return cuotaModeradora;
+//    }
+//    public double calcularCopago() {
+//    double copago = 0.0;
+//    if (salario == 1) {
+//        copago = suServicioMedico.calcularCosto() * 0.115;
+//      if (copago > 304583){
+//        copago = 304583;
+//      }
+//    } 
+//    else if (salario == 2) {
+  //      copago = suServicioMedico.calcularCosto() * 0.173;
+//      if (copago > 1220455){
+//        copago = 1220455;
+//      }
+//    } 
+//    else if (salario == 3) {
+//        copago = suServicioMedico.calcularCosto() * 0.23;
+//      if (copago > 2440909){
+//        copago = 2440909;
+//      }
+//      
+//    }
+//    return copago;
+//    }
     
-    public double CalcularCuota(){
-        double cuotaModeradora = 0.0;
-             if (salario == 1) {
-            cuotaModeradora = 4100;
-        } else if (salario == 2) {
-            cuotaModeradora = 16400;
-        } else if (salario == 3) {
-            cuotaModeradora = 43000;
-        }
-        return cuotaModeradora;
-    }
-    public double calcularCopago() {
-    double copago = 0.0;
-    if (salario == 1) {
-        copago = suServicioMedico.calcularCosto() * 0.115;
-    } else if (salario == 2) {
-        copago = suServicioMedico.calcularCosto() * 0.173;
-    } else if (salario == 3) {
-        copago = suServicioMedico.calcularCosto() * 0.23;
-    }
-    return copago;
-    }
-    }
